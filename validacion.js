@@ -7,7 +7,7 @@ function initForm() {
             return false;
         } else {
             evt.preventDefault();
-            var user =  document.getElementById('FormularioTelefonoEmail').value;
+            var user = document.getElementById('FormularioTelefonoEmail').value;
             var pass = document.getElementById('FormularioPassword').value;
             setCookie('usuario', user);
             setCookie('password', pass);
@@ -22,7 +22,7 @@ function initSession() {
     var form = document.getElementById("IniciarSesion");
     var boton = document.getElementById("CerrarSesion");
     var sesion = getCookie('sesion');
-    if(sesion != ''){
+    if (sesion != '') {
         form.style.display = 'none';
         boton.style.display = 'block';
     }
@@ -37,21 +37,21 @@ function initSession() {
             return false;
         } else {
             evt.preventDefault();
-            var user =  document.getElementById('IniciarSesionTelefonoEmail').value;
+            var user = document.getElementById('IniciarSesionTelefonoEmail').value;
             var pass = document.getElementById('IniciarSesionPassword').value;
             var usuario = getCookie('usuario');
             var password = getCookie('password');
-            if(usuario != '' && password != ''){
-                if(usuario == user && password == pass){
+            if (usuario != '' && password != '') {
+                if (usuario == user && password == pass) {
                     setCookie('sesion', 'unahora', 1);
                     form.style.display = 'none';
                     boton.style.display = 'block';
-                }else{
+                } else {
                     resultado.style.display = 'block';
                     resultado.className = "alert-error";
                     resultado.innerHTML = "Usuario o contraseña incorrecta.";
                 }
-            }else{
+            } else {
                 resultado.style.display = 'block';
                 resultado.className = "alert-warning";
                 resultado.innerHTML = "Adevertencia: Codigo de error; 0001; Descripción: NO COOKIE;";
@@ -78,6 +78,7 @@ function initInputs() {
 function initConfirmPass() {
     var elem = document.getElementById("FormularioPasswordDos");
     elem.addEventListener("blur", verifyPass);
+
     function verifyPass(input) {
         input = event.target;
         var primaryPass = document.getElementById('FormularioPassword');
@@ -92,12 +93,13 @@ function initConfirmPass() {
 function initConfirmTelefonoEmail() {
     var elem = document.getElementById("FormularioTelefonoEmail");
     elem.addEventListener("blur", verifyTelefonoEmail);
+
     function verifyTelefonoEmail(input) {
         input = event.target;
         var resultadoEmail = input.value.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/gi);
         var resultadoTelefono = input.value.match(/^(\+34|0034|34)?[6|7|8|9][0-9]{8}$/gi);
 
-        if(input.value == resultadoEmail || input.value == resultadoTelefono){
+        if (input.value == resultadoEmail || input.value == resultadoTelefono) {
             input.setCustomValidity('');
         } else {
             input.setCustomValidity('Introduce un valor correcto.');
@@ -120,9 +122,9 @@ function showPassword(checkbox) {
     }
 }
 
-function setCookie(cname,cvalue,exhours) {
+function setCookie(cname, cvalue, exhours) {
     var d = new Date();
-    d.setTime(d.getTime() + (exhours*60*60*1000));
+    d.setTime(d.getTime() + (exhours * 60 * 60 * 1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -131,7 +133,7 @@ function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
