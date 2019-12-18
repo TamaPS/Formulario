@@ -144,3 +144,20 @@ function getCookie(cname) {
     }
     return "";
 }
+
+
+initCompruebaIniCookie();
+function initCompruebaIniCookie (){
+    if(getCookie('CookieInicial')!="1"){
+        document.getElementById("barraaceptacion").style.display="block";
+    }
+    else {
+        document.getElementById("barraaceptacion").style.display="none";  
+    }
+
+}
+
+function PonerCookie(){
+    setCookie('CookieInicial','1',365);
+    document.getElementById("barraaceptacion").style.display="none";
+}

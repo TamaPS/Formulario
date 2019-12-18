@@ -254,3 +254,9 @@ Recoge la cookie para comprobar los datos.
                 }
                 return "";
             }*/
+
+<h2>Test de Validación</h2>
+
+El test de validación se ha realizado con Katalon como extensión de Chrome.<br>
+Se han realizado test para los siguientes casos.<br>
+![Lista de Test](../master/myFolder/TestRealizados.jpg)

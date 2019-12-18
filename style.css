@@ -92,7 +92,7 @@ input.dirty:not(:focus):valid {
 }
 
 
-/*#barraaceptacion {
+#barraaceptacion {
     display: none;
     position: fixed;
     left: 0px;
@@ -126,7 +126,7 @@ input.dirty:not(:focus):valid {
     padding-left: 5px;
     text-decoration: none;
     color: #faff00;
-}*/
+}
 
 @media only screen and (max-width: 576px) {
     /* Para teléfonos móviles */
